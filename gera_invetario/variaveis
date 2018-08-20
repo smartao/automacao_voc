@@ -14,6 +14,10 @@ ARQS=inventario
 # Arquivo de hosts com hostname e IPs
 ARQF=inventario-full
 
+# Prefixo do nome das instancias
+# Ex: srv123456, nesse caso o prefixo é srv
+PREFIXO="srv"
+
 # Porta de acesso SSH dos servidores
 PORTA=2222
 #################################################
