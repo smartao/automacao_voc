@@ -1,24 +1,7 @@
 #!/bin/bash
 
-#### Carregando variaveis necessárias ####
-# Definicao do keystone
-KEYSTONE="/home/smartao/voc/keystone_sergei" 
-
-# Diretorio de destino dos arquivos
-DEST=/home/smartao/voc/
-
-# Arquivo temporario para gerar relatorio
-ARQT=inventario.tmp
-
-# Arquivo de hosts simples com apenas IPs
-ARQS=inventario
-
-# Arquivo de hosts com hostname e IPs
-ARQF=inventario-full
-
-# Porta de acesso ssh dos servidores
-PORTA=2222
-############################################
+# Carregando arquivo de variaveis
+source /usr/local/bin/automacao_voc/gera_invetario/variaveis
 
 # Carregando keystone
 source $KEYSTONE
