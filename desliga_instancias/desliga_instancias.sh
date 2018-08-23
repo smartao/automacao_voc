@@ -31,7 +31,7 @@ source $KEYSTONE # Carregando as variaveis do keystone
 for ((s=0;s<${#STATUS[@]};s++)); # For que corre os dois status disponveis ACTIVE e SHUTOFF
 do
         # Coletando todos os ID das instancias que corresponde a acao e horario atual
-        openstack server list | cut -d'|' -f 1-4 | grep -i ${STATUS[$s]} | grep ${PESQUISA[$s]} | cut -d'|' -f 2 |  cut -d" " -f 2 > $ARQ
+        openstack server list | cut -d'|' -f 1-4 | grep -i ${STATUS[$s]} | grep ${PESQUISA[$s]} | awk '{print $2}' > $ARQ
         # Executuando a ação correspondente do horario programado naquele instancia
         for i in `cat $ARQ`; do openstack server ${PARAMETRO[$s]} $i; done
 done  
