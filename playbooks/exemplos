@@ -1,0 +1,23 @@
+###### Exemplos de utilização #####
+
+### Comandos simples ###
+Vericando memória utilizada
+$ ansible all -a "free -m" -i ~/voc/inventario -u root
+
+Verificando load averge
+$ ansible all -a "uptime" -i ~/voc/inventario -u root
+
+Verificando horario
+$ ansible all -a "date" -i ~/voc/inventario -u root
+
+### Playbooks ###
+Validando se o python esta instalado
+$ ansible-playbook valida-python.yml -i ~/voc/inventario
+
+Configurando chave SSH
+$ ansible-playbook instala-keyssh.yml -i ~/voc/inventario
+
+Corrigindo o timezone
+$ ansible-playbook corrige-timezone.yml -i ~/voc/inventario
+
+
