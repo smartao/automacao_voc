@@ -1,0 +1,16 @@
+# Ativando armazenamento de logs pós boot
+---
+
+- hosts: all
+  gather_facts: False
+  remote_user: linux
+  become: yes
+  become_user: root
+  become_method: sudo
+
+  tasks:
+    - name: Ativar armazenamento de logs de boot journald
+      replace:
+        path: /etc/systemd/journald.conf
+        regexp: '^#Storage=auto'
+        replace: 'Storage=persistent'

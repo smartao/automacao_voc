@@ -1,3 +1,4 @@
+# Corrigindo o TimeZone do host para SP
 ---
 
 - hosts: all
