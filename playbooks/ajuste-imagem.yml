@@ -1,0 +1,25 @@
+# Ajustes para imagem Ubuntu-16.04-Devops-20180810
+---
+- hosts: all
+  gather_facts: False
+  remote_user: linux
+  become: yes
+  become_user: root
+  become_method: sudo
+
+  tasks:
+   - name: Adicionando chave SSH no servidor
+     authorized_key: 
+       user: root
+       exclusive: False
+       key: "{{ lookup('file', '~/.ssh/id_rsa.pub') }}"
+
+   - name: Corrigindo TimeZone para SP
+     timezone:
+       name: America/Sao_Paulo
+
+   - name: Ativar armazenamento de logs de boot journald
+     replace:
+       path: /etc/systemd/journald.conf
+       regexp: '^#Storage=auto'
+       replace: 'Storage=persistent'
