@@ -7,7 +7,7 @@ PARAMETRO[0]=stop       # Comando para parar as instancias
 PARAMETRO[1]=start      # Comando para iniciar as instancias
 STATUS[0]=ACTIVE        # Status das instancias ativas, sera usando quando corresponder ao horario das instancias serem desligadas
 STATUS[1]=SHUTOFF       # Status das instancias desalocadas, sera usando quando corresponder ao horario das instancias serem ligadas
-KEYSTONE=/etc/scripts/keystone_vivo_cloud # Logalizazao do arquivo de keystone 
+KEYSTONE=/etc/scripts/keystone_vivo_cloud # Localizazao do arquivo de keystone 
 
 source $KEYSTONE # Carregando as variaveis do keystone
 
