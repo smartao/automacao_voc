@@ -1,10 +1,10 @@
  #### Descricao:  
- Script de automacao de ativacao e desativacao de Instancias alocadas no OpenStack.
+ Script de automacao de ativacao e desativacao de Instancias alocadas no OpenStack.  
  
  #### Regra:   
- Criar o nome da instancia com a descrição do horário que deseja ligar e desligar.
- Lembrando que o nome da instancia nao pode ultrapassar 64 caracteres.
- Caso o parâmetro de dia seja omitido o agendamento não funcionará.
+ Criar o nome da instancia com a descrição do horário que deseja ligar e desligar.  
+ Lembrando que o nome da instancia nao pode ultrapassar 64 caracteres.  
+ Caso o parâmetro de dia seja omitido o agendamento não funcionará.  
  
 #### Parametros:
    
