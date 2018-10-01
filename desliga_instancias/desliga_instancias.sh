@@ -9,7 +9,7 @@ PESQUISA[1]=WA`date "+%H"`h # WA = Walkup  Ligando as instancias
 PARAMETRO[0]=stop       # Comando para parar as instancias
 PARAMETRO[1]=start      # Comando para iniciar as instancias
 
-KEYSTONE=/etc/scripts/keystone_vivo_cloud # Localizazao do arquivo de keystone 
+KEYSTONE=/etc/scripts/vivo_cloud/keystone_vivo_cloud # Localizacao do arquivo keystone
 
 source $KEYSTONE # Carregando as variaveis do keystone
 
@@ -20,3 +20,4 @@ do
         # Executuando a ação correspondente do horario programado naquele instancia
         for i in `cat $ARQ`; do openstack server ${PARAMETRO[$s]} $i; done
 done  
+
