@@ -1,7 +1,7 @@
 # Ajustes para imagem Ubuntu-16.04-Devops-20180810
 ---
 - hosts: all
-  gather_facts: False
+  gather_facts: True
   remote_user: linux
   become: yes
   become_user: root

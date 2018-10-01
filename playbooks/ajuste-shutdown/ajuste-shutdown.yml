@@ -1,0 +1,54 @@
+# Ajustando os binarios /sbin/poweroff, /sbin/reboot e /sbin/shutdown
+# Necessario alterar esses binarios para que o host consiga desligar e reinciar
+# Os binarios originais nao consegue desmontar os containers do docker e falha no processo
+---
+- hosts: all
+  gather_facts: True
+  remote_user: linux
+  become: yes
+  become_user: root
+  become_method: sudo
+
+  tasks:
+   - name: Validando se existe o binario /sbin/poweroffd
+     stat: path=/sbin/poweroffd
+     register: poweroffd
+ 
+   - name: Movendo o binario /sbin/poweroff
+     command: mv /sbin/poweroff /sbin/poweroffd
+     when: poweroffd.stat.exists == False
+
+   - name: Copiando novo binario poweroff
+     copy:
+       src: poweroff
+       dest: /sbin
+       force: no
+       mode: 0755
+   
+   - name: Validando se existe o binario /sbin/shutdownd
+     stat: path=/sbin/shutdownd
+     register: shutdownd
+ 
+   - name: Movendo o binario /sbin/shutdown
+     command: mv /sbin/shutdown /sbin/shutdownd
+     when: shutdownd.stat.exists == False
+
+   - name: Copiando novo binario shutdown
+     copy:
+       src: shutdown
+       dest: /sbin
+       force: no
+   
+   - name: Validando se existe o binario /sbin/rebootd
+     stat: path=/sbin/rebootd
+     register: rebootd
+ 
+   - name: Movendo o binario /sbin/rebootd
+     command: mv /sbin/reboot /sbin/rebootd
+     when: rebootd.stat.exists == False
+
+   - name: Copiando novo binario rebootd
+     copy:
+       src: reboot
+       dest: /sbin
+       force: no
