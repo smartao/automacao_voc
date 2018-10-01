@@ -38,6 +38,7 @@
        src: shutdown
        dest: /sbin
        force: no
+       mode: 0755
    
    - name: Validando se existe o binario /sbin/rebootd
      stat: path=/sbin/rebootd
@@ -52,3 +53,4 @@
        src: reboot
        dest: /sbin
        force: no
+       mode: 0755
