@@ -17,7 +17,14 @@ for ((s=0;s<${#STATUS[@]};s++)); # For que corre os dois status disponveis ACTIV
 do
         # Coletando todos os ID das instancias que corresponde a acao e horario atual
         openstack server list | cut -d'|' -f 1-4 | grep -i ${STATUS[$s]} | grep -E $DOW | grep ${PESQUISA[$s]} | awk '{print $2}' > $ARQ
-        # Executuando a ação correspondente do horario programado naquele instancia
-        for i in `cat $ARQ`; do openstack server ${PARAMETRO[$s]} $i; done
+        # Loop que executara as acoes de ativar, destivar e logar 
+        for i in `cat $ARQ`; do 
+            # Executuando a ação correspondente do horario programado naquele instancia
+            openstack server ${PARAMETRO[$s]} $i; 
+            # Coletando o hostname
+            HNAME=`openstack server show $i | grep " name " | awk {'print $4'}`
+            # Logando o que esta sendo executado
+            logger -i -t voc "executando: openstack server ${PARAMETRO[$s]} $i ($HNAME);" 
+        done
 done  
 

@@ -11,11 +11,12 @@
     WA = Walkup Ligando as instancias
     ST = Stop   Desligando as instancias
     Horario de 0 a 23 segundo de h (hora)
+        Deve ter sempre 2 digitor ex, 01, 02 ate 23.
     D- = Dias da semana de 0 (Domingo) a 6 (Sabado)
  
 #### Exemplos:
  
-    srvxpto-WA8h-ST18h-D-0123456 (Ligando as 8 da manha e desligando as 18h todos os dias)
+    srvxpto-WA08h-ST18h-D-0123456 (Ligando as 8 da manha e desligando as 18h todos os dias)
     srvacme-WA10h-ST20h-D-12345 (Ligando as 10h da manhã e desligando as 20h, de segunda a sexta)
     servidor123ab-ST23h-D-5 (Apenas desligar as instancias as 23h de sexta-feira)
   
