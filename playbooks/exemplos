@@ -10,6 +10,9 @@ $ ansible all -a "uptime" -i ~/voc/inventario -u root
 Verificando horario
 $ ansible all -a "date" -i ~/voc/inventario -u root
 
+Validando entrada do horario verao 2018 (data antiga)
+$ ansible all -a "date --date='2018-11-04 03:01 utc'" -i ~/voc/inventario -u root
+
 ### Playbooks ###
 Validando se o python esta instalado
 $ ansible-playbook valida-python.yml -i ~/voc/inventario
