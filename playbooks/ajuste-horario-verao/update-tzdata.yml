@@ -1,0 +1,15 @@
+# Atualizando o pacote tzdata para ajustar o horário verao
+---
+- hosts: all
+  gather_facts: True
+#  remote_user: linux
+#  become: yes
+#  become_user: root
+#  become_method: sudo
+
+  tasks:
+   - name: Atualizando pacote tzdata
+     apt: 
+       name: tzdata
+       update_cache: yes
+       state: latest

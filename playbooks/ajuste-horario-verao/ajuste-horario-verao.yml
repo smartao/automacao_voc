@@ -1,6 +1,4 @@
-# Ajustando os binarios /sbin/poweroff, /sbin/reboot e /sbin/shutdown
-# Necessario alterar esses binarios para que o host consiga desligar e reinciar
-# Os binarios originais nao consegue desmontar os containers do docker e falha no processo
+# Atualizando o pacote da zona East Brasil para ajustar o horario de verao 2018
 ---
 - hosts: all
   gather_facts: True
@@ -21,8 +19,8 @@
    - name: Copiando o arquivo .zic atualizado
      copy:
        force: no
-       src:  verao-2029.zic
+       src:  verao-2018-2029-enem.zic
        dest: /usr/share/zoneinfo/Brazil/
 
    - name: Atualizando timezone para horario de verao
-     raw: zic /usr/share/zoneinfo/Brazil/verao-2029.zic
+     raw: zic /usr/share/zoneinfo/Brazil/verao-2018-2029-enem.zic
