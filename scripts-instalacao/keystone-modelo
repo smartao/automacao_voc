@@ -1,7 +1,7 @@
 export OS_USERNAME="NOMEDOUSUARIO"
 export OS_USER_DOMAIN_NAME="NOMEDOPROJETO"
 export OS_PASSWORD="SENHA"
-export PS1="[\u@\h \W(keystone_$OS_USERNAME)]\$ "
+#export PS1="[\u@\h \W(keystone_$OS_USERNAME)]\$ " # Caso queira customizar o PS1 do Ubuntu
 # Only change these for a different region
 export OS_TENANT_NAME=sa-brazil-1
 export OS_PROJECT_NAME=sa-brazil-1
