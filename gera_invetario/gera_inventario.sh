@@ -3,6 +3,9 @@
 # Carregando arquivo de variaveis
 source /usr/local/bin/automacao_voc/gera_invetario/variaveis
 
+# Criando diretorio  de destino
+mkdir $DEST > /dev/null 2>&1
+
 # Carregando keystone
 source $KEYSTONE
 

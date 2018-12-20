@@ -1,9 +1,9 @@
 ######## Carregando variaveis necessárias ########
 # Definindo o caminho do arquivo de keystone
-KEYSTONE="/home/smartao/voc/keystone_sergei" 
+KEYSTONE="/etc/scripts/vivo_cloud/keystone_vivo_cloud"
 
 # Diretorio de destino dos relatorios
-DEST="/home/smartao/voc/"
+DEST="/tmp/voc/"
 
 # Arquivo temporario para gerar relatorio
 ARQT="inventario.tmp"
