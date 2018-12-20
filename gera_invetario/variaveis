@@ -3,21 +3,24 @@
 KEYSTONE="/home/smartao/voc/keystone_sergei" 
 
 # Diretorio de destino dos relatorios
-DEST=/home/smartao/voc/
+DEST="/home/smartao/voc/"
 
 # Arquivo temporario para gerar relatorio
-ARQT=inventario.tmp
+ARQT="inventario.tmp"
 
 # Arquivo de hosts com apenas IPs usado pelo Ansible
-ARQS=inventario
+ARQS="inventario"
 
 # Arquivo de hosts com hostname e IPs
-ARQF=inventario-full
+ARQF="inventario-full"
+
+# Diretorio temporário
+TEMP="/tmp"
 
 # Prefixo do nome das instancias
 # Ex: srv123456, nesse caso o prefixo é srv
 PREFIXO="srv"
 
 # Porta de acesso SSH dos servidores
-PORTA=2222
+PORTA="2222"
 #################################################
