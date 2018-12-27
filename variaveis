@@ -2,20 +2,23 @@
 # Definindo o caminho do arquivo de keystone
 KEYSTONE="/etc/scripts/vivo_cloud/keystone_vivo_cloud"
 
+# Diretorio temporário
+TEMP="/tmp"
+
 # Diretorio de destino dos relatorios
-DEST="/tmp/voc/"
+DEST="/tmp/voc"
 
 # Arquivo temporario para gerar relatorio
 ARQT="inventario.tmp"
 
 # Arquivo de hosts com apenas IPs usado pelo Ansible
-ARQS="inventario"
+ARQS="inventario-ansible"
 
 # Arquivo de hosts com hostname e IPs
-ARQF="inventario-full"
+ARQF="inventario-full.csv"
 
-# Diretorio temporário
-TEMP="/tmp"
+# Usuario de deploy da API
+USUARIO="devopsdeploy"
 
 # Prefixo do nome das instancias
 # Ex: srv123456, nesse caso o prefixo é srv

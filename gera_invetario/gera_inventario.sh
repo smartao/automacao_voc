@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Carregando arquivo de variaveis
-source /usr/local/bin/automacao_voc/gera_invetario/variaveis
+source /usr/local/bin/automacao_voc/variaveis
 
 # Criando diretorio  de destino
 mkdir $DEST > /dev/null 2>&1
@@ -16,17 +16,17 @@ openstack server list | grep -i $PREFIXO |cut -d"|" -f 3,5 | cut -d\= -f 2 | cut
 echo "[all]"> $DEST/$ARQS
 for i in `cat $DEST/$ARQT`;do echo $i:$PORTA >> $DEST/$ARQS; done
 
-# Filtrando para o hostname instancias
+# Filtrando o hostname das instancias e armazenando em arquivo temporario
 openstack server list | grep -i $PREFIXO | cut -d"|" -f 3 | sed 's/ //g' > $TEMP/vochostname
 
-# Filtrando o primeiro IP de todas as intancias
+# Filtrando o primeiro IP de todas as intancias e armazenando em arquivo temporario
 openstack server list | grep -i $PREFIXO | cut -d"|" -f 5 | cut -d\= -f 2 | cut -d, -f1 | sed 's/ //g' > $TEMP/vocip
 
-# Filtro para status
+# Filtro para status das instancias e armazenado em arquivo temporario
 openstack server list | grep -i $PREFIXO | cut -d"|" -f 3,4 | cut -d"|" -f2 | sed 's/ //g' > $TEMP/vocstatus
 
-# Justando os arquivos
-paste -d";" $TEMP/vochostname $TEMP/vocip $TEMP/vocstatus > $DEST/${ARQF}.csv
+# Justando os arquivos e separando itens por ponto e virgula
+paste -d";" $TEMP/vochostname $TEMP/vocip $TEMP/vocstatus > $DEST/${ARQF}
 
 # Deletando arquivo temporario
 rm $DEST/$ARQT >/dev/null 1>&2

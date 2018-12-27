@@ -47,7 +47,7 @@ Na pasta **scripts_instalacao** existe o arquivo **instalando-openstackcli.sh** 
 Execute:
 
 ```
-cd scripts-instalacao
+cd scripts_instalacao
 ./instalando-openstackcli.sh
 ```
 
