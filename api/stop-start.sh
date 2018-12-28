@@ -3,7 +3,7 @@
 # Carregando arquivo de variaveis
 source /usr/local/bin/automacao_voc/variaveis
 
-PASTA[0]="walkup"      # Pasta que conterá as instancias que deverao ser ligadas
+PASTA[0]="start"       # Pasta que conterá as instancias que deverao ser ligadas
 PASTA[1]="stop"        # Pasta que conterá as instancias que deverao ser desligadas
 
 PARAMETRO[0]="start"    # Comando para iniciar as instancias
