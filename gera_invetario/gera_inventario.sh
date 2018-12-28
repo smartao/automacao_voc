@@ -9,8 +9,8 @@ mkdir $DEST > /dev/null 2>&1
 # Carregando keystone
 source $KEYSTONE
 
-# Gerando lista de ips
-openstack server list | grep -i $PREFIXO |cut -d"|" -f 3,5 | cut -d\= -f 2 | cut -d, -f1 | sort -n -t . -k 1,1 -k 2,2 -k 3,3 -k 4,4 > $DEST/$ARQT
+# Gerando lista de ips de todos as instancias ativas
+openstack server list | grep -i $PREFIXO | grep ACTIVE | cut -d"|" -f 3,5 | cut -d\= -f 2 | cut -d, -f1 | sort -n -t . -k 1,1 -k 2,2 -k 3,3 -k 4,4 > $DEST/$ARQT
 
 # Adicionando porta da variavel PORTA para acesso aos servidores
 echo "[all]"> $DEST/$ARQS
