@@ -28,5 +28,10 @@ openstack server list | grep -i $PREFIXO | cut -d"|" -f 3,4 | cut -d"|" -f2 | se
 # Justando os arquivos e separando itens por ponto e virgula
 paste -d";" $TEMP/vochostname $TEMP/vocip $TEMP/vocstatus > $DEST/${ARQF}
 
-# Deletando arquivo temporario
-rm $DEST/$ARQT >/dev/null 1>&2
+# Limitando acesso ao inventario full
+chmod 640 $DEST/${ARQF}
+chmod 640 $DEST/${ARQS}
+
+# Deletando arquivos temporarios
+rm $TEMP/vochostname $TEMP/vocip $TEMP/vocstatus $DEST/$ARQT >/dev/null 1>&2
+
