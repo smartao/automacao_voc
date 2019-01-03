@@ -18,14 +18,14 @@ for ((s=0;s<${#STATUS[@]};s++)); # For que corre os dois status disponveis ACTIV
 do
         # Coletando todos os ID das instancias que corresponde a acao e horario atual
         openstack server list | cut -d'|' -f 1-4 | grep -i ${STATUS[$s]} | grep -E $DOW | grep ${PESQUISAH[$s]} | grep $PESQUISAM | awk '{print $2}' > $ARQ
-        # Loop que executara as acoes de ativar, destivar e logar 
-        for i in `cat $ARQ`; do 
-            # Executuando a ação correspondente do horario programado naquele instancia
-            openstack server ${PARAMETRO[$s]} $i; 
-            # Coletando o hostname
-            HNAME=`openstack server show $i | grep " name " | awk {'print $4'}`
-            # Logando o que esta sendo executado
-            logger -i -t voc "executando: openstack server ${PARAMETRO[$s]} $i ($HNAME);" 
+        for i in `cat $ARQ`; do  # Loop que executara as acoes de ativar/destivar e logar 
+            openstack server ${PARAMETRO[$s]} $i; # Executuando a ação correspondente do horario programado naquele instancia
+            TESTE=$? # Armazenando status do comando anterior (0/1, sucesso/falha)
+            HNAME=`openstack server show $i | grep " name " | awk {'print $4'}` # Coletando o hostname para adicionar no log
+            if [ $? -eq 0 ]; then # Verificar se comando foi executado corretamente
+                logger -i -t voc "executando [OK]: openstack server ${PARAMETRO[$s]} $i ($HNAME);" # Logando sucesso ao executar acao
+            else # se ocorreu algum erro
+                logger -i -t voc "executando [OK]: openstack server ${PARAMETRO[$s]} $i ($HNAME);" # Logando falha ao executar a acao
+            fi
         done
 done  
-
