@@ -4,7 +4,7 @@ Para utilização da API é necessário:
 1. Criar um usuário no servidor de automação.
 1. Gerar chave SSH para permitir acesso sem senha. (opcional)
 1. Configurar crontab para:
-   1. Gerar relatorio das instâncias que o usuario tera acesso.
+   1. Gerar relatório das instâncias que o usuário tera acesso.
    1. Executar a api.
 
 Observações:  
@@ -38,7 +38,7 @@ Exemplo desligadmento remotamente
 Será criado um usuário chamado *devopsdeploy*.  
 Servidor de automação tem o IP *10.2.1.120*.  
 
-Criando usuario *=devopsdeploy.  
+Criando usuário *devopsdeploy*.  
 `# useradd -m -s /bin/bash devopsdeploy`
 
 Configurando para trocar a senha no primeiro logon.  
@@ -62,13 +62,13 @@ Obs: Com isso o usuário conseguirá logar no servidor de automação sem precis
 Abrir o crontab.  
 `# crontab -e`
 
-Adicionar as linhas para gerar o relatorio no home do usuário devops deploy.  
+Adicionar as linhas para gerar o relatório no home do usuário devops deploy.  
 ```
 # Relatorio VOC das instancias do projeto devops, API
 * * * * * /bin/cat /tmp/voc/inventario-full.csv | /bin/grep -i devops >/home/devopsdeploy/inventario-full.csv 2>/dev/null
 ```
 
-Adicione as linhas que faz a execução da API  
+Adicione as linhas que faz a execução da API.  
 ```
 # API para desligar/ligar instancias do projeto DevOps, API
 * * * * * /usr/local/bin/automacao_voc/api/stop-start.sh >/dev/null 2>&1 
