@@ -22,6 +22,7 @@ Um servidor Linux com Ubuntu 16.04
 1. Principais funcoes
    1. desliga_instancias
    1. gera_inventario
+   1. API
    1. playbooks
 
 ### Instalando
@@ -33,8 +34,8 @@ O servidor Ubuntu 16.04 será o responsável por fazer a comunicação com a pla
 Execute os comando para baixar os repositórios:
 
 ```
-cd /usr/local/bin/ 
-git clone https://github.com/smartao/automacao_voc.git
+$ cd /usr/local/bin/ 
+$ git clone https://github.com/smartao/automacao_voc.git
 ```
 
 Recomendo que seja baixado no diretório /usr/local/bin/ pois já existe algumas configurações apontando para ele.
@@ -47,8 +48,8 @@ Na pasta **scripts_instalacao** existe o arquivo **instalando-openstackcli.sh** 
 Execute:
 
 ```
-cd scripts_instalacao
-./instalando-openstackcli.sh
+$ cd scripts_instalacao
+$ ./instalando-openstackcli.sh
 ```
 
 #### Configurando o keystone 
@@ -59,8 +60,8 @@ Na pasta **scripts_instalacao** existe o arquivo **keystone-modelo** contendo to
 Recomendo que seja copiado para a pasta do usuário do linux e renomeado para o nome do login do VivoOpenCloud.
 
 ```
-cp keystone-modelo ~/
-mv keystone-modelo keystone-NOMEDOSUARIO
+$ cp keystone-modelo ~/
+$ mv keystone-modelo keystone-NOMEDOSUARIO
 ```
 
 Para conectar é necessário alterar apenas as 3 primeiras linhas do arquivo.
@@ -72,10 +73,10 @@ export OS_PASSWORD="SENHA"
 ```
  
 Para carregar as credenciais execute o comando  
-`source keystone-NOMEDOSUARIO`
+`$ source keystone-NOMEDOSUARIO`
 
 Para validar o funcionamento execute  
-`openstack server list`
+`$ openstack server list`
 
 ### Principais funções
 
@@ -97,6 +98,10 @@ Script que fará todo o trabalho de gerar o relatório.
 
 Exemplo de configuração no crontab para executar todo os dias a 1h da manhã  
 `0 1 * * * /usr/local/bin/automacao_voc/gera_invetario/gera_inventario.sh > /dev/null`
+
+#### API
+
+Pasta que contém a API para desligamento/ligamento das instancias do VOC
 
 #### playbooks
 
