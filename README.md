@@ -22,7 +22,7 @@ Um servidor Linux com Ubuntu 16.04
 1. Principais funcoes
    1. desliga_instancias
    1. gera_inventario
-   1. API
+   1. api
    1. playbooks
 
 ### Instalando
@@ -43,7 +43,7 @@ Recomendo que seja baixado no diretório /usr/local/bin/ pois já existe algumas
 #### Instalando o Openstack CLI 
 
 Toda a comunicação é realizada usando os pacotes do OpenStack CLI por isso é obrigatório a instalação.  
-Na pasta **scripts_instalacao** existe o arquivo **instalando-openstackcli.sh** com todos os comandos de instalação bastando apenas executar o script
+Na pasta **scripts_instalacao** existe o arquivo **instalando-openstackcli.sh** com todos os comandos de instalação bastando apenas executar o script.
 
 Execute:
 
@@ -72,10 +72,10 @@ export OS_USER_DOMAIN_NAME="NOMEDOPROJETO"
 export OS_PASSWORD="SENHA"
 ```
  
-Para carregar as credenciais execute o comando  
+Para carregar as credenciais execute o comando:  
 `$ source keystone-NOMEDOSUARIO`
 
-Para validar o funcionamento execute  
+Para validar o funcionamento execute:  
 `$ openstack server list`
 
 ### Principais funções
@@ -96,12 +96,12 @@ Contém todas as principais configurações do script.
 *gera_inventario.sh*  
 Script que fará todo o trabalho de gerar o relatório.
 
-Exemplo de configuração no crontab para executar todo os dias a 1h da manhã  
+Exemplo de configuração no crontab para executar todo os dias a 1h da manhã.  
 `0 1 * * * /usr/local/bin/automacao_voc/gera_invetario/gera_inventario.sh > /dev/null`
 
-#### API
+#### api
 
-Pasta que contém a API para desligamento/ligamento das instancias do VOC
+Pasta que contém a API para desligamento/ligamento das instancias do VOC.
 
 #### playbooks
 
