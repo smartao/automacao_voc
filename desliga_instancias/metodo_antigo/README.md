@@ -8,6 +8,14 @@
  Caso o parâmetro de dia seja omitido o agendamento não funcionará.  
  
 #### Parametros
+   
+    WA = Walkup Ligando as instancias.
+    ST = Stop   Desligando as instancias.
+    Horario de 0 a 23 seguido do h (hora).
+        Deve ser sempre 2 digitos ex: 01, 02 ate 22 e 23.
+    Minuto de 0 a 55 seguido do m (minuto).
+        Deve ser sempre 2 digitos ex: 00, 05 ate 50 e 55.
+    D- = Dias da semana de 0 (Domingo) a 6 (Sabado).
  
 #### Exemplos
  
