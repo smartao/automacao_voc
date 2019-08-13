@@ -2,7 +2,7 @@
 Repositório focado para criar automação de tarefas na plataforma de Openstack do VivoOpenCloud
 
   
-![license](https://img.shields.io/aur/license/yaourt.svg?longCache=true&style=popout-square)
+![license](https://img.shields.io/badge/license-GPL3-orange?style=flat-square)
 ![distro](https://img.shields.io/badge/ubuntu-16.04-805AFF.svg?longCache=true&style=popout-square)
 
 ## Pré requisitos
