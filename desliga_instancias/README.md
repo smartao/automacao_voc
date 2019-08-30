@@ -3,18 +3,32 @@
  Script de automacao de ativacao e desativacao de Instancias alocadas no OpenStack.  
  
 #### Regras   
- Criar o nome da instancia com a descrição do horário que deseja ligar e desligar.  
- Lembrando que o nome da instancia nao pode ultrapassar 64 caracteres.  
- Caso o parâmetro de dia seja omitido o agendamento não funcionará.  
- 
-#### Parametros
- 
+ Criar o nome da instancia com a TAG que corresponde a um horario.
+ Exemplos de tags: AUTOT1, AUTOT2
+
+ Nesse caso a tag AUTOT1 é um periodo de tempo e a tag AUTOT2 é outro periodo de tempo.
+ Com isso podemos definir que servidores com
+ tag AUTOT1, serao desligado de segunda a sexta as 8h e ligados de segunda a sexta as 20h
+ tag AUTOT2, serao desligado de segunda a sexta as 10h e ligados de segunda a sexta as 22h
+
 #### Exemplos
  
-    srvxpto-WA08h10m-ST18h30m-D-0123456 (Ligando as 8:10 da manha e desligando as 18:30 todos os dias)
-    srvacme-WA10h00m-ST20h00m-D-12345 (Ligando as 10h da manhã e desligando as 20h, de segunda a sexta)
-    servidor123ab-ST23h45h-D-5 (Apenas desligar as instancias as 23:45 de sexta-feira)
-  
+    srvxpto-AUTOT1 
+    srvacme-AUTOT1
+    servidor123ab-AUTOT2  
+
+ 
 #### Crontab 
-Exemplo de configuração para executar o cron a cada 5 minutos.  
-    `*/5 * * * * /usr/local/bin/openstack-automacao.sh > /dev/null`
+Exemplo de configuração para executar o cron
+
+TAG AUTOT1
+Ligando de segunda a sexta as 8h e desligando de segunda a sexta as 20h
+    `0 8 * * 1-5 /usr/local/bin/openstack-automacao.sh AUTOT1 start > /dev/null`
+    `0 20 * * 1-5 /usr/local/bin/openstack-automacao.sh AUTOT1 stop > /dev/null`
+
+TAG AUTOT2
+Ligando de segunda a sexta as 10h e Desligando de segunda a sexta as 22h
+    `0 10 * * 1-5 /usr/local/bin/openstack-automacao.sh AUTOT2 start > /dev/null`
+    `0 22 * * 1-5 /usr/local/bin/openstack-automacao.sh AUTOT2 stop > /dev/null`
+ 
+
