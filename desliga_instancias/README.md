@@ -23,12 +23,13 @@ Exemplo de configuração para executar o cron
 
 TAG AUTOT1
 Ligando de segunda a sexta as 8h e desligando de segunda a sexta as 20h
-    `0 8 * * 1-5 /usr/local/bin/openstack-automacao.sh AUTOT1 start > /dev/null`
-    `0 20 * * 1-5 /usr/local/bin/openstack-automacao.sh AUTOT1 stop > /dev/null`
+    0 8 * * 1-5 /usr/local/bin/openstack-automacao.sh AUTOT1 start > /dev/null
+    0 20 * * 1-5 /usr/local/bin/openstack-automacao.sh AUTOT1 stop > /dev/null
 
 TAG AUTOT2
 Ligando de segunda a sexta as 10h e Desligando de segunda a sexta as 22h
-    `0 10 * * 1-5 /usr/local/bin/openstack-automacao.sh AUTOT2 start > /dev/null`
-    `0 22 * * 1-5 /usr/local/bin/openstack-automacao.sh AUTOT2 stop > /dev/null`
+   
+    0 10 * * 1-5 /usr/local/bin/openstack-automacao.sh AUTOT2 start > /dev/null
+    0 22 * * 1-5 /usr/local/bin/openstack-automacao.sh AUTOT2 stop > /dev/null
  
 
