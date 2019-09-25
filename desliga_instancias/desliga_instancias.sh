@@ -15,9 +15,10 @@ for i in `cat $ARQ`; do  # Loop que executara as acoes de ativar/destivar e loga
 	openstack server $2 $i; # Executuando a ação correspondente do horario programado naquele instancia
     TESTE=$? # Armazenando status do comando anterior (0/1, sucesso/falha)
     HNAME=`openstack server show $i | grep " name " | awk {'print $4'}` # Coletando o hostname para adicionar no log
-    if [ $? -eq 0 ]; then # Verificar se comando foi executado corretamente
-		logger -i -t voc "executando [OK]: openstack server $2 $i ($HNAME);" # Logando sucesso ao executar acao
-    else # se ocorreu algum erro
-        logger -i -t voc "executando [OK]: openstack server $2 $i ($HNAME);" # Logando falha ao executar a acao
-    fi
+    if [ $TESTE -eq 0 ]; then # Verificar se comando foi executado corretamente
+    	STATUS="OK"
+	else # se ocorreu algum erro
+    	STATUS="FALHA"
+	fi
+	logger -i -t voc "executando [$STATUS]: openstack server $2 $i ($HNAME);" # Logando falha ao executar a acao
 done
