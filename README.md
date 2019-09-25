@@ -23,7 +23,6 @@ Um servidor Linux com Ubuntu 16.04
    1. desliga_instancias
    1. gera_inventario
    1. api
-   1. playbooks
 
 ### Instalando
 
@@ -102,9 +101,4 @@ Exemplo de configuração no crontab para executar todo os dias a 1h da manhã.
 #### api
 
 Pasta que contém a API para desligamento/ligamento das instancias do VOC.
-
-#### playbooks
-
-Vários playbook em Ansible que utilizo no dia a dia.  
-Existe um arquivo chamado **exemplo** demonstrando a utilização básica.
 
