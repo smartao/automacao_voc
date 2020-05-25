@@ -1,5 +1,5 @@
 # automacao_voc
-Repositório focado para criar automação de tarefas na plataforma de Openstack do VivoOpenCloud
+Repositório focado para criar automação de tarefas na plataforma da Huawei Cloud
 
   
 ![license](https://img.shields.io/badge/license-GPL3-orange?style=flat-square)
@@ -8,9 +8,9 @@ Repositório focado para criar automação de tarefas na plataforma de Openstack
 ## Pré requisitos
 
 ```
-Ter uma conta no VivoOpenCloud
-Ter permissões de administrador a um projeto do VivoOpenCloud
-Um servidor Linux com Ubuntu 16.04
+Ter uma conta no Huawei Cloud - https://intl.huaweicloud.com/en-us/
+Ter permissões de administrador a um projeto
+Um servidor Linux com Ubuntu 16.04 ou Windows 10 WSL (Ubuntu e/ou Pengwin)
 ```
 
 ### Overview
@@ -28,7 +28,7 @@ Um servidor Linux com Ubuntu 16.04
 
 #### Baixando repositório
 
-O servidor Ubuntu 16.04 será o responsável por fazer a comunicação com a plataforma VivoOpenCloud.
+O servidor Ubuntu 16.04 será o responsável por fazer a comunicação com a plataforma Huawei Cloud.
 
 Execute os comando para baixar os repositórios:
 
@@ -51,12 +51,12 @@ $ cd scripts_instalacao
 $ ./instalando-openstackcli.sh
 ```
 
-#### Configurando o keystone 
+#### Configurando a autenticação 
 
-Para a comunicação funcionar entre o servidor Ubuntu e a plataforma VivoOpenCloud é necessário criar um arquivo de keystone que conterá as credenciais para autenticação da plataforma.
+Para a comunicação funcionar entre o servidor Ubuntu e a plataforma Huawei Cloud é necessário criar um arquivo que conterá as credenciais para autenticação da plataforma.
 
 Na pasta **scripts_instalacao** existe o arquivo **keystone-modelo** contendo todas as principais configurações.  
-Recomendo que seja copiado para a pasta do usuário do linux e renomeado para o nome do login do VivoOpenCloud.
+Recomendo que seja copiado para a pasta do usuário do linux e renomeado para o nome do login do Huawei Cloud.
 
 ```
 $ cp keystone-modelo ~/
@@ -100,5 +100,5 @@ Exemplo de configuração no crontab para executar todo os dias a 1h da manhã.
 
 #### api
 
-Pasta que contém a API para desligamento/ligamento das instancias do VOC.
+Pasta que contém a API para desligamento/ligamento das instancias do HWC.
 
