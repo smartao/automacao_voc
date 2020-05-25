@@ -1,3 +1,5 @@
+# Consultar documentação da Huawei Cloud em https://developer.huaweicloud.com/intl/en-us/endpoint
+# Consultar também lista de API's e Endpoints https://developer.huaweicloud.com/intl/en-us/openapilist
 export OS_USERNAME="NOMEDOUSUARIO"
 export OS_USER_DOMAIN_NAME="NOMEDOPROJETO"
 export OS_PASSWORD="SENHA"
@@ -5,7 +7,7 @@ export OS_PASSWORD="SENHA"
 # Only change these for a different region
 export OS_TENANT_NAME=sa-brazil-1
 export OS_PROJECT_NAME=sa-brazil-1
-export OS_AUTH_URL=https://iam.sa-brazil-1.telefonicaopencloud.com/v3
+export OS_AUTH_URL=https://iam.myhuaweicloud.com #alteração para conseguir se autenticar utilizando o IAM global.
 export OS_INTERFACE=public
 # No changes needed beyond this point
 export NOVA_ENDPOINT_TYPE=publicURL
@@ -16,9 +18,13 @@ export OS_VOLUME_API_VERSION=2
 export OS_IDENTITY_API_VERSION=3
 export OS_IMAGE_API_VERSION=2
 # IP address of each service
-export OS_ANTIDDOS_ENDPOINT_OVERRIDE=https://scc.antiddos.sa-brazil-1.telefonicaopencloud.com
-export OS_AS_ENDPOINT_OVERRIDE=https://as.sa-brazil-1.telefonicaopencloud.com
-export OS_CLOUDEYE_ENDPOINT_OVERRIDE=https://ces.sa-brazil-1.telefonicaopencloud.com
-export OS_VB_ENDPOINT_OVERRIDE=https://vbs.sa-brazil-1.telefonicaopencloud.com
-export OS_WORKSPACE_ENDPOINT_OVERRIDE=https://workspace.sa-brazil-1.telefonicaopencloud.com
-export OS_KM_ENDPOINT_OVERRIDE=https://kms.sa-brazil-1.telefonicaopencloud.com
+
+###################################################################################################################
+# Remover a seção abaixo ou atualizar com o correto endereço do endpoint na ocumentação no inicio deste documento # 
+###################################################################################################################
+#export OS_ANTIDDOS_ENDPOINT_OVERRIDE=https://scc.antiddos.sa-brazil-1.telefonicaopencloud.com
+#export OS_AS_ENDPOINT_OVERRIDE=https://as.sa-brazil-1.telefonicaopencloud.com
+#export OS_CLOUDEYE_ENDPOINT_OVERRIDE=https://ces.sa-brazil-1.telefonicaopencloud.com
+#export OS_VB_ENDPOINT_OVERRIDE=https://vbs.sa-brazil-1.telefonicaopencloud.com
+#export OS_WORKSPACE_ENDPOINT_OVERRIDE=https://workspace.sa-brazil-1.telefonicaopencloud.com
+#export OS_KM_ENDPOINT_OVERRIDE=https://kms.sa-brazil-1.telefonicaopencloud.com
